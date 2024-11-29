@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Dashboard</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Dynamic Dashboard</h1>
+    <p id="subtitle">Data last updated on: </p>
+  </header>
+
+  <main>
+    <!-- Donut Chart Section -->
+    <section id="donut-chart-section">
+      <canvas id="donutChart" width="400" height="400"></canvas>
+      <button id="updateChartBtn">Update Chart</button>
+    </section>
+  
+    <!-- Dynamic Flex Grid Section -->
+    <section id="dynamic-grid-section">
+      <div class="controls">
+        <input type="text" id="searchInput" placeholder="Search products..." />
+        <button id="addCardBtn">Add New Card</button>
+      </div>
+    
+      <div class="grid-container">
+        <!-- Cards will be dynamically populated here --> 
+      </div>
+      
+      
+    </section>
+  </main>
+  
+
+  <footer>
+    <p>© 2024 Dashboard Inc.</p>
+  </footer>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>

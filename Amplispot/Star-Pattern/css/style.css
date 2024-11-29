@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #2c3e50;
+  }
+  
+  /* Header Section */
+  header {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+    margin: 0;
+  }
+  
+  header p {
+    margin: 0.5rem 0 0;
+    font-size: 1rem;
+  }
+  
+  /* Main Section */
+  main {
+    padding: 2rem;
+  }
+  
+  /* Donut Chart Section */
+  #donut-chart-section {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  /* Adjust the size of the donut chart */
+#donutChart {
+    max-width: 300px; /* Adjust the size as needed */
+    max-height: 300px;
+    margin: 0 auto; /* Centers the chart */
+  }
+  
+  /* Further reduce size on smaller screens */
+  @media (max-width: 768px) {
+    #donutChart {
+      max-width: 200px; /* Smaller size for mobile */
+      max-height: 200px;
+    }
+  }
+  
+/* Button Styling */
+#updateChartBtn {
+    background-color: #3498db; /* Primary color (Blue) */
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1rem; /* Ensure font size is consistent */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Hover effect */
+  #updateChartBtn:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+  }
+  
+  /* Focus effect (optional for accessibility) */
+  #updateChartBtn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.6); /* Light blue shadow on focus */
+  }
+  
+  /* For smaller screens */
+  @media (max-width: 768px) {
+    #updateChartBtn {
+      padding: 0.6rem 1.2rem; /* Slightly smaller padding on smaller screens */
+      font-size: 0.9rem; /* Adjust font size */
+    }
+  }
+  
+
+/* Main Section - Adjust controls' alignment */
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Style the search input */
+  #searchInput {
+    padding: 0.8rem 1rem;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 250px;
+    max-width: 100%;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Focus effect on the search input */
+  #searchInput:focus {
+    outline: none;
+    border-color: #2980b9;
+    box-shadow: 0 0 8px rgba(41, 128, 185, 0.3);
+  }
+  
+  /* Style the "Add New Card" button */
+  #addCardBtn {
+    padding: 0.8rem 1.5rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Hover effect for the "Add New Card" button */
+  #addCardBtn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .controls {
+      flex-direction: column;
+    }
+    
+    #searchInput {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+    
+    #addCardBtn {
+      width: 100%;
+    }
+  }
+  
+
+  
+  /* Dynamic Flex Grid Section */
+  .grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+  
+  /* Card Styling */
+  .card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s forwards;
+  }
+  
+  .card img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  /* Card Image Styling */
+.card-image {
+    width: 100%; /* Makes the image fill the card width */
+    height: auto; /* Maintains the aspect ratio */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+    margin-bottom: 1rem; /* Space between image and content */
+    object-fit: cover; /* Ensures the image looks good */
+    max-height: 200px; /* Optional: Limits height for consistency */
+  }
+  
+  .card-image {
+    object-fit: cover; /* Fills the area without stretching */
+    max-height: 200px;
+  }
+
+  .card:hover .card-image {
+    transform: scale(1.05); /* Slight zoom on hover */
+    transition: transform 0.3s ease;
+  }
+    
+  /* Styling for card images */
+.card-image {
+  width: 100%; /* Ensures image fills the card width */
+  height: auto; /* Maintains original aspect ratio */
+  border-radius: 8px; /* Optional: Adds rounded corners */
+  margin-bottom: 1rem; /* Adds space between the image and text */
+  object-fit: cover; /* Prevents distortion if dimensions vary */
+  max-height: 200px; /* Optional: Sets a consistent maximum height */
+}
+
+/* Add hover effect (optional) */
+.card:hover .card-image {
+  transform: scale(1.05); /* Zoom effect on hover */
+  transition: transform 0.3s ease;
+}
+
+
+  .card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #34495e;
+  }
+  
+  .card p {
+    font-size: 1rem;
+    color: #7f8c8d;
+  }
+  
+  /* Hover Effects */
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Responsive Grid Layout */
+  @media (max-width: 1024px) {
+    .card {
+      width: calc(50% - 1rem);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .card {
+      width: 100%; 
+    }
+  }
+  
+  /* Footer Section */
+  footer {
+    background-color: #34495e;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  /* Animation: Fade-in */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
